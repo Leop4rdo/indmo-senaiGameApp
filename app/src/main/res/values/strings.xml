@@ -2,4 +2,6 @@
     <string name="app_name">Senai Game App</string>
 
     <string name="search_hint">Pesquise por um jogo...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
