@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Senai Game App</string>
+
+    <string name="search_hint">Pesquise por um jogo...</string>
 </resources>
