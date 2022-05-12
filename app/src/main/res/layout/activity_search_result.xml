@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchResultActivity"
+    android:background="@color/dark">
+
+    <!-- Vertical Guide Lines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="vertical"/> <!-- Vertical Start  -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="20dp"
+        android:orientation="vertical"/> <!-- Vertical End  -->
+
+    <!-- Horizontal Guide Lines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_begin="30dp"
+        android:orientation="horizontal"/> <!-- Horizontal Start -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_end="30dp"
+        android:orientation="horizontal"/> <!-- Horizontal End -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_header_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent=".15"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_header_end"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline_end"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_start"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertical_guideline_profile_end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <ImageView android:id="@+id/profile_pic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:src="@drawable/ic_user"
+            style="@style/profile_pic" />
+
+        <!-- search bar container -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@drawable/search_bar_bg"
+
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintStart_toEndOf="@id/vertical_guideline_profile_end"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline_search_input_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="48dp" />
+
+            <EditText
+                android:id="@+id/editText"
+
+                android:hint="@string/search_hint"
+
+                app:layout_constraintEnd_toStartOf="@+id/vertical_guideline_search_input_end"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                android:scrollHorizontally="true"
+                style="@style/search_input" />
+
+            <ImageButton
+                android:id="@+id/search_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+
+                android:background="@drawable/ic_search_24"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/editText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_guideline_header_end"
+        android:scrollbars="none">
+
+        <com.google.android.flexbox.FlexboxLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexWrap="wrap"
+            app:justifyContent="space_evenly"
+            app:alignItems="center"
+            android:paddingTop="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/card_god_of_war_2018">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:background="@drawable/thubnail_god_of_war_2018">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="God Of War\n(2018)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/turret_road_thick"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+
+                        android:shadowRadius="4"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:background="@drawable/thubnail_god_of_war_2018">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="God Of War\n(2018)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/turret_road_thick"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+
+                        android:shadowRadius="4"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:background="@drawable/thubnail_god_of_war_2018">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="God Of War\n(2018)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/turret_road_thick"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+
+                        android:shadowRadius="4"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:background="@drawable/thubnail_god_of_war_2018">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="God Of War\n(2018)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/turret_road_thick"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+
+                        android:shadowRadius="4"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:background="@drawable/thubnail_god_of_war_2018">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="God Of War\n(2018)"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:fontFamily="@font/turret_road_thick"
+                        android:shadowColor="@color/black"
+                        android:shadowDx="5"
+                        android:shadowDy="5"
+
+                        android:shadowRadius="4"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </com.google.android.flexbox.FlexboxLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

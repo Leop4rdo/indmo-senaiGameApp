@@ -1,5 +1,6 @@
 package br.senai.sp.jandira.senaigameapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,5 +14,10 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        binding.searchButton.setOnClickListener{
+            val intent = Intent(this, SearchResultActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
